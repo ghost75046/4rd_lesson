@@ -1,104 +1,69 @@
-/* var name = 'Vladilen'
-const lastName = 'Minin'
-let age = 26
-name = 'Vlad'
-*/
-
-const isReady = true
-
-isReady ? console.log('success') : console.log('fail')
-
-//console.log(isFullAge)
+//Number
 /*
-true && false
-true && true
-false && true
-false && false
+const num =13 //integer
+const float =13.13 //float
+const pow =10e3
+console.log(pow)
+
+console.log('MAX_SAFE_INTEGER',Number.MAX_SAFE_INTEGER )
+console.log('Math.pow 53',Math.pow(2,53)-1)
+console.log('MIN_SAFE_INTEGER',Number.MIN_SAFE_INTEGER )
+console.log('MAX_VALUE',Number.MAX_VALUE)
+console.log('MIN_VALUE',Number.MIN_VALUE)
+console.log('POSITIVE_INFINITY',Number.POSITIVE_INFINITY)
+console.log('NEGATIVE_INFINITY',Number.NEGATIVE_INFINITY)
+console.log('2 / 0',2 / 0)
+console.log(Number.NaN)
+console.log(typeof NaN)
+const weird = 2 / undefined
+console.log(isNaN(weird))
+console.log(isNaN(13))
+console.log(isFinite(Infinity))
+console.log(isFinite(13))
+
+const stringInt = '13'
+const stringFloat = '13.13'
+console.log(Number.parseInt(stringInt)+2)
+console.log(Number(stringInt)+2)
+console.log(+stringInt+2)
+console.log(Number.parseFloat(stringFloat)+2)
+
+console.log(0.4+0.2)
+console.log(2/5+1/5)
+console.log(parseFloat((0.4+0.2).toFixed(1)))
+
 */
-//8 Функции
-
-function calculateAge(year){
-    return 2023-year
-}
-
-//console.log(calculateAge(1999))
+//BigInt
 /*
-function logInfoAbout(name, year,sex) {
-    const age = calculateAge(year)
-    if (age > 0 $$ sex ==='male') {
-        console.log('человеку по имени ' + name + ' сейчас ' + age + ' лет(годиков)')
-    }else{
-        console.log('подумай еще')
-    }
+console.log( -9007199254740991999999n - 900719925474099199999n)
+//console.log( 9007199254740991999999.124124n) // error
+//console.log(10n -4)// error
+console.log(parseInt(10n) -4)
+console.log(10n - BigInt(4))
+console.log(5n /2n)
 
-}
-
-logInfoAbout('Vlad',2222)
 */
-//
+// 3 Math
 
-function logInfoAbout(name, year,sex) {
-    const age = calculateAge(year)
-    if (age > 0 && sex ==='male') {
-        console.log(name + 'у сейчас ' + age + ' лет(годиков)')
-    }else if (age > 0 && sex ==='female') {
-        console.log(name + 'е сейчас ' + age + ' лет(годиков)')
-    }
-    else{
+console.log(Math.E)
+console.log(Math.PI)
+console.log(Math.sqrt(25))
+console.log(Math.pow(5,3))
+console.log(Math.abs(-42))
+console.log(Math.max(1,2,24,4,5))
+console.log(Math.min(1,2,24,4,5))
+console.log(Math.floor(4.9))
+console.log(Math.ceil(4.9))
+console.log(Math.round(4.9))
+console.log(Math.trunc(4.9))
+console.log(Math.random())
 
-        console.log('подумай еще (глянь в свидетельство о рождении)')
-    }
 
+// 4 Example
+
+function getRandomBetween(min,max){
+    return Math.floor(Math.random()*(max - min+1) + min)
 }
 
-logInfoAbout('Влад',1999,'male')
+console.log(getRandomBetween(10, 42));
 
-//9 Массивы
-
-const watches = ['Omega', 'Seiko','Casio','Audemars Piguet']
-//const watches = new Array('Omega', 'Seiko','Casio')
-/*
-console.log(watches[2])
-console.log(watches.length)
-
-watches[0] = 'Rolex'
-watches[3] = 'Vostok'
-console.log(watches)
-*/
-
-//10 Циклы
-
-
-/*
-for (let i = 0; i < watches.length; i++){
-    //console.log(i)
-    const watch = watches[i]
-    console.log(watch)
-}
-*/
-
-for (let watch of watches){
-    console.log(watch)
-}
-
-//11 Объекты
-
-const person = {
-    firstName: 'Vlad',
-    lastName:'Savenkov',
-    year:1999,
-    languages:['Ru','En','JS'],
-    hasWife: true,
-    greet: function (){
-        console.log('greet from person')
-    }
-
-
-}
-console.log(person.firstName)
-console.log(person['lastName'])
-const key = 'languages'
-person.firstName ='Vladislav'
-person.isProgrammer= true
-console.log(person)
-person.greet()
