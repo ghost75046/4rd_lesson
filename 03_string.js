@@ -40,10 +40,18 @@ console.log(string.trimRight())
 
 function logPerson(s, name, age){
     console.log(s,name,age)
-    return 'Info about person'
+    if (age < 0){
+        age = 'еще не родился'
+    }
+    return `${s[0]}${name}${s[1]}${age}${s[2]}`
 }
 
 const personName = 'Vlad'
+const personName2 = 'Sergey'
 const personAge = 23
-const output = logPerson`Имя: ${personName} Возраст: ${personAge}`
+const personAge2 = -23
+const output = logPerson`Имя: ${personName} Возраст: ${personAge}!`
+const output2 = logPerson`Имя: ${personName2} Возраст: ${personAge2}!`
 console.log(output)
+console.log(output2)
+
