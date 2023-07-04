@@ -1,38 +1,21 @@
-// Event Loop
+const heading = document.getElementById('hello')
+console.dir(heading)
 
-// const timeout = setTimeout(() => {
-//
-//     console.log('After timeout')
-//     }, 2500)
-// clearTimeout(timeout)
-//
-// const interval = setInterval(() => {
-//
-//     console.log('After timeout')
-// }, 1000)
-//clearInterval(interval)
-
-// const delay = (callback, wait = 1000) => {
-//     setTimeout(callback, wait)
-// }
-//
-// delay( ()=>{
-//     console.log('After 2 seconds')
-//     }, 2000)
+const heading2 = document.getElementsByTagName('h2')
 
 
-const delay = (wait = 1000) =>{
-    const promise = new Promise( (resolve, reject) =>{
-        setTimeout(() => {
-        resolve()
-        }, wait)
-    })
-return promise
+setTimeout( ()=> {
+    addStylesTo(heading)
+}, 1500)
+
+function addStylesTo(node){
+    heading.textContent = 'Changed from JavaScript!'
+
+    heading.style.color = 'green'
+
+    heading.style.textAlign = 'center'
+
+    heading.style.backgroundColor = 'purple'
+
+    heading.style.padding = '2rem'
 }
-
-delay(2500)
-.then( () => {
-    console.log('After 2 seconds')
-})
-.catch(err => console.error(err))
-.finally( () => console.log('Finally'))
