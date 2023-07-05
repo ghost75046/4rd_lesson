@@ -22,8 +22,18 @@ setTimeout( ()=> {
 setTimeout( ()=> {
     addStylesTo(heading2, 'Практикуйся', 'blue')
 }, 4500)
+
+const link = heading3.querySelector('a')
+link.addEventListener('click', (event) =>{
+    event.preventDefault()
+    console.log('Click on link', event.target.getAttribute('href'))
+    const url = event.target.getAttribute('href')
+
+    window.location = url
+})
+
 setTimeout( ()=> {
-    addStylesTo(heading3, 'и всё получится!', 'yellow', '2rem')
+    addStylesTo(heading3.children[0], 'и всё получится!', 'yellow', '2rem')
 }, 3000)
 
 function addStylesTo(node,text, color = 'green', fontSize){
@@ -34,6 +44,8 @@ function addStylesTo(node,text, color = 'green', fontSize){
     node.style.textAlign = 'center'
     node.style.backgroundColor = 'purple'
     node.style.padding = '2rem'
+    node.style.display ='block'
+    node.style.display = '100%'
     //falsy: '', undefined, null, 0, false
     if (fontSize) {
         node.style.fontSize = fontSize
@@ -54,7 +66,7 @@ heading.onclick =() =>{
 
 
 
-heading2.addEventListener('dblclick', listener () => {
+heading2.addEventListener('dblclick', () => {
     if ( heading2.style.color === 'green'){
         heading2.style.color = 'blue'
         heading2.style.backgroundColor = '#fff'
